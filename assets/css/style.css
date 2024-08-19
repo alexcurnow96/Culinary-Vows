@@ -1,279 +1,123 @@
-.custom-carousel {
-    display: flex;
-    overflow-x: auto;
-    white-space: no-wrap;
+header {
+  background-color: #ffffff;
+  padding: 0;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  box-shadow: 0 2px #3a3a3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#menu {
+  font-size: 110%;
+  letter-spacing: 4px;
+  list-style-type: none;
+}
+
+#menu > li {
+  margin-bottom: 1em;
+  font-family: 'Podkova', sans-serif;
+  padding: 0;
+}
+
+.active {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+/* Navbar styles with dropdown toggle */
+nav {
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  left: 0;
+  padding: 0 1rem;
+  box-shadow: 0 2px 2px #3a3a3a;
+  display: none;
+  top: 100%;
+}
+
+/* Nav toggle */
+#nav-toggle:checked~nav {
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 2rem;
+  padding-right: 5%;
+}
+
+#logo {
+  font-family: 'Trirong', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.hero-image {
+  height: 600px;
+  width: 100%;
+  background: url("../images/hero-image.jpg") no-repeat center center/cover;
+  position: relative;
+  color: #fff8f0;
+  padding-top: 20%;
+}
+
+.hero-image h1 {
+  font-family: 'Trirong', sans-serif;
+  font-size: 400%;
+  font-weight: 200;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: white;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  /* Header */
+  nav {
+      display: block;
+      position: relative;
+      box-shadow: none;
+      width: fit-content;
+      padding-right: 1rem;
   }
-  
-  .item {
-    display: inline-block;
-    padding: 20px;
-    margin: 10px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    transition: background-color 0.3s;
+
+  #menu {
+      display: flex;
   }
-  
-  .item.active {
-    background-color: #007bff;
-    color: white;
+
+  #menu > li {
+      padding-left: 1rem;
   }
-  
-  
-  
-  /******* Fonts Import Start **********/
-  @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-  /********* Fonts Face CSS End **********/
-  
-  /******* Common Element CSS Start ******/
-  * {
-    margin: 0px;
-    padding: 0px;
+
+  .nav-toggle-label {
+      display: none;
   }
-  body {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
+
+  #logo {
+      font-size: 280%;
+      line-height: 75px;
+      margin: 0 0.5rem;
   }
-  .clear {
-    clear: both;
+}
+
+@media screen and (min-width: 992px) {
+  #menu a:hover{
+      border-bottom: 1px solid #3a3a3a;
   }
-  img {
-    max-width: 100%;
-    border: 0px;
-  }
-  ul,
-  ol {
-    list-style: none;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-    outline: none;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-  }
-  a:focus,
-  a:active,
-  a:visited,
-  a:hover {
-    text-decoration: none;
-    outline: none;
-  }
-  a:hover {
-    color: #e73700;
-  }
-  h2 {
-    margin-bottom: 48px;
-    padding-bottom: 16px;
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 700;
-    position: relative;
-    text-transform: capitalize;
-  }
-  h3 {
-    margin: 0 0 10px;
-    font-size: 28px;
-    line-height: 36px;
-  }
-  button {
-    outline: none !important;
-  }
-  /******* Common Element CSS End *********/
-  
-  /* -------- title style ------- */
-  .line-title {
-    position: relative;
-    width: 400px;
-  }
-  .line-title::before,
-  .line-title::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    border-radius: 2px;
-  }
-  .line-title::before {
-    width: 100%;
-    background: #f2f2f2;
-  }
-  .line-title::after {
-    width: 32px;
-    background: #e73700;
-  }
-  
-  /******* Middle section CSS Start ******/
-  /* -------- Landing page ------- */
-  .food-section {
-    padding: 60px 50px;
-  }
-  .food-section .custom-carousel {
-    margin: 15px 0;
-    display: flex;
-    display: -webkit-flex;
-  }
-  .food-section .item {
-    margin: 0 15px 60px;
-    width: 320px;
-    height: 400px;
-    display: flex;
-    display: -webkit-flex;
-    align-items: flex-end;
-    -webkit-align-items: flex-end;
-    background: #343434 no-repeat center center / cover;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    cursor: pointer;
-  }
-  .food-section .item.active {
-    width: 500px;
-    box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-  }
-  .food-section .item:after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-  }
-  .food-section .item-desc {
-    padding: 0 24px 12px;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    transform: translateY(calc(100% - 54px));
-    -webkit-transform: translateY(calc(100% - 54px));
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-  }
-  .food-section .item.active .item-desc {
-    transform: none;
-    -webkit-transform: none;
-  }
-  .food-section .item-desc p {
-    opacity: 0;
-    -webkit-transform: translateY(32px);
-    transform: translateY(32px);
-    transition: all 0.4s ease-in-out 0.2s;
-    -webkit-transition: all 0.4s ease-in-out 0.2s;
-  }
-  .food-section .item.active .item-desc p {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  
-  .food-section .custom-carousel .dots {
-    margin-top: -20px;
-    position: relative;
-    z-index: 5;
-  }
-  
-  /******** Middle section CSS End *******/
-  
-  /***** responsive css Start ******/
-  
-  @media (min-width: 992px) and (max-width: 1199px) {
-    h2 {
-      margin-bottom: 32px;
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 24px;
-      line-height: 32px;
-    }
-  
-    /* -------- Landing page ------- */
-    .food-section {
-      padding: 50px 30px;
-    }
-    .food-section .item {
-      margin: 0 12px 60px;
-      width: 260px;
-      height: 360px;
-    }
-    .food-section .item.active {
-      width: 400px;
-    }
-    .food-section .item-desc {
-      transform: translateY(calc(100% - 46px));
-      -webkit-transform: translateY(calc(100% - 46px));
-    }
-  }
-  
-  @media (min-width: 768px) and (max-width: 991px) {
-    h2 {
-      margin-bottom: 32px;
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 24px;
-      line-height: 32px;
-    }
-    .line-title {
-      width: 330px;
-    }
-  
-    /* -------- Landing page ------- */
-    .food-section {
-      padding: 50px 30px 40px;
-    }
-    .food-section .item {
-      margin: 0 12px 60px;
-      width: 240px;
-      height: 330px;
-    }
-    .food-section .item.active {
-      width: 360px;
-    }
-    .food-section .item-desc {
-      transform: translateY(calc(100% - 42px));
-      -webkit-transform: translateY(calc(100% - 42px));
-    }
-  }
-  
-  @media (max-width: 767px) {
-    body {
-      font-size: 14px;
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    h3 {
-      margin: 0 0 8px;
-      font-size: 19px;
-      line-height: 24px;
-    }
-    .line-title {
-      width: 250px;
-    }
-  
-    /* -------- Landing page ------- */
-    .food-section {
-      padding: 30px 15px 20px;
-    }
-    .food-section .item {
-      margin: 0 10px 40px;
-      width: 200px;
-      height: 280px;
-    }
-    .food-section .item.active {
-      width: 270px;
-      box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-      -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-    }
-    .food-section .item-desc {
-      padding: 0 14px 5px;
-      transform: translateY(calc(100% - 42px));
-      -webkit-transform: translateY(calc(100% - 42px));
-    }
-  }
+}
+

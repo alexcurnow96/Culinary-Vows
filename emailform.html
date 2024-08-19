@@ -1,0 +1,39 @@
+<div>
+    <h2>Send e-mail to Jane:</h2>
+
+<form action="mailto:janedoe@gmail.com" method="post" enctype="text/plain">
+<div id="arrayContents"></div>
+<input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form>
+</div>
+
+
+<script>
+    const arrayContentsDiv = document.getElementById("arrayContents");
+    let retrievedString = sessionStorage.getItem('myArray');
+    let retrievedArray = JSON.parse(retrievedString);
+    //arrayContentsDiv.innerHTML = retrievedArray;
+
+    console.log(retrievedArray); // Output: [1, 2, 3, 4, 5]
+
+    
+
+    // Create a string to hold the HTML
+    let htmlString = "<ul>";
+
+    // Loop through the array and add each item as a list item
+    retrievedArray.forEach(item => {
+        htmlString += `<li>${item}</li>`;
+     });
+
+    // Close the unordered list tag
+    htmlString += "</ul>";
+
+    // Set the innerHTML of the div to the HTML string
+    arrayContentsDiv.innerHTML = htmlString;
+</script>
+</body>
+</html>
+
+</div>
