@@ -67,7 +67,10 @@ nav {
 #logo {
   font-family: 'Trirong', sans-serif;
   font-weight: 100;
-  font-size: 30px;
+}
+
+.menu li {
+  font-size: 12px;
 }
 
 /* ------------------------------ MAIN PAGE ------------------------------ */
@@ -199,6 +202,19 @@ h3 {
   top: 0;
 }
 
+
+/* ------------------------------ MENUS ------------------------------ */
+select {
+  width: 200px;
+  border: 1px solid black;
+  color: black;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  size: 3rem;
+}
+
 /* ------------------------------ MODALS ------------------------------ */
 #myImg {
   cursor: pointer;
@@ -267,6 +283,7 @@ h3 {
   }
   .line-title {
     width: 200px;
+    margin-top: 20px;
   }
   
   .food-section {
@@ -303,7 +320,7 @@ h3 {
   }
 
   .text-column {
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   .text-column h1 {
@@ -508,6 +525,17 @@ h3 {
     display: flex;
     overflow-x: auto;
     white-space: no-wrap;
+  }
+
+  .text-column h1 {
+    font-family: 'Podkova', sans-serif;
+    font-size: 60px;
+    font-weight: 200;
+  }
+  
+  .text-column p {
+    font-family: 'Domine', sans-serif;
+    font-size: 18px;
   }
 
 }
