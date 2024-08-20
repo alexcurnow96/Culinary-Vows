@@ -1,57 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Podkova:wght@400..800&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Podkova:wght@400..800&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/3a3dab9761.js" crossorigin="anonymous"></script>
   <link href="assets/css/style.css" rel="stylesheet">
   <title>Culinary Vows</title>
 </head>
+
 <body>
 
   <!----------------------------------------- HEADER & NAV BAR ----------------------------------------->
   <header>
     <a href="index.html">
-        <h1 id="logo">Culinary Vows</h1>
+      <h1 id="logo">Culinary Vows</h1>
     </a>
     <input type="checkbox" name="nav-toggle" id="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars"></i></label>
     <nav>
-        <ul id="menu">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#starter-section">Starters</a></li>
-            <li><a href="#main-section">Mains</a></li>
-            <li><a href="#sweet-section">Desserts</a></li>
-            <li><a href="emailform.html">Submit</a></li>
-        </ul>
+      <ul id="menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#starter-section">Starters</a></li>
+        <li><a href="#main-section">Mains</a></li>
+        <li><a href="#sweet-section">Desserts</a></li>
+        <li><a href="emailform.html">Submit</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
   <!----------------------------------------- MAIN PAGE ----------------------------------------->
-<section class="hero-section">
-  <div class="hero-image">
-    <h1>Culinary Vows</h1>
+  <section class="hero-section">
+    <div class="hero-image">
+      <h1>Culinary Vows</h1>
+    </div>
+  </section>
+
+  <!----------------------------------------- EMAIL FORM ----------------------------------------->
+  <div class="email-form">
+    <h1>Your chosen options</h1>
+    <form action="mailto:janedoe@gmail.com" method="post" enctype="text/plain">
+      <div id="arrayContents"></div>
+      <input type="submit" value="Send">
+      <input type="reset" value="Reset">
+    </form>
   </div>
-</section>
-
-<!----------------------------------------- EMAIL FORM ----------------------------------------->
-<div>
-    <h2>Send e-mail to Jane:</h2>
-
-<form action="mailto:janedoe@gmail.com" method="post" enctype="text/plain">
-<div id="arrayContents"></div>
-<input type="submit" value="Send">
-<input type="reset" value="Reset">
-</form>
-</div>
 
 
 
 
-<script>
+  <script>
     const arrayContentsDiv = document.getElementById("arrayContents");
     let retrievedString = sessionStorage.getItem('myArray');
     let retrievedArray = JSON.parse(retrievedString);
@@ -59,23 +62,24 @@
 
     console.log(retrievedArray); // Output: [1, 2, 3, 4, 5]
 
-    
+
 
     // Create a string to hold the HTML
     let htmlString = "<ul>";
 
     // Loop through the array and add each item as a list item
     retrievedArray.forEach(item => {
-        htmlString += `<li>${item}</li>`;
-     });
+      htmlString += `<li>${item}</li>`;
+    });
 
     // Close the unordered list tag
     htmlString += "</ul>";
 
     // Set the innerHTML of the div to the HTML string
     arrayContentsDiv.innerHTML = htmlString;
-</script>
+  </script>
 </body>
+
 </html>
 
 </div>
