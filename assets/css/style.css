@@ -94,6 +94,10 @@ nav {
   height: auto;
 }
 
+.image-column {
+  justify-content: center;
+}
+
 .text-column {
   display: flex;
   flex-direction: column;
@@ -268,6 +272,14 @@ select {
   cursor: pointer;
 }
 
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 /* ------------------------------ MEDIA QUERIES ------------------------------ */
 @media screen and (max-width: 425px) {
   body {
@@ -283,7 +295,7 @@ select {
   }
   .line-title {
     width: 200px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .food-section {

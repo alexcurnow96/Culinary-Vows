@@ -13,7 +13,6 @@
     rel="stylesheet">
   <script src="https://kit.fontawesome.com/3a3dab9761.js" crossorigin="anonymous"></script>
   <link href="assets/css/style.css" rel="stylesheet">
-  <link href="assets/js/script.js" rel="stylesheet">
   <title>Culinary Vows</title>
 </head>
 
@@ -59,13 +58,8 @@
           day with you! Please RSVP by submitting your menu choices in this app.</p>
       </div>
     </div>
-
-
   </section>
-
-
-
-
+  
 
   <!----------------------------------------- STARTER PAGE ----------------------------------------->
   <section class="starter-section food-section" id="starter-section">
@@ -264,11 +258,13 @@
       modal.style.display = "block";
     }
 
-    //var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close")[0];
 
-    //span.onclick = function() {
-    //  modal.style.display = "none";
-    //}
+    modal.onclick = function() {
+      console.log(test);
+     modal.style.display = "none";
+     modal.preventDefault();
+    }
   </script>
 
 
