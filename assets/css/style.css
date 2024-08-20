@@ -70,27 +70,42 @@ nav {
   font-size: 30px;
 }
 
-
 /* ------------------------------ MAIN PAGE ------------------------------ */
-
-.hero-image {
-  height: 600px;
-  width: 100%;
-  background: url("../images/hero-image.jpg") no-repeat center center/cover;
+.container {
   position: relative;
-  color: #fff8f0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
 }
 
-.hero-image h1 {
-  font-family: 'Trirong', sans-serif;
-  font-size: 400%;
-  font-weight: 200;
-  text-align: center;
-  display: flex;
+.column {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 80px;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  color: white;
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-column h1 {
+  font-family: 'Podkova', sans-serif;
+  font-size: 50px;
+  font-weight: 200;
+}
+
+.text-column p {
+  font-family: 'Domine', sans-serif;
+  font-size: 12px;
 }
 
 
@@ -111,7 +126,6 @@ h3 {
   width: 250px;
 }
 
-
 .food-section {
   padding: 30px 15px 20px;
 }
@@ -125,7 +139,6 @@ h3 {
   box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
 }
-
 
 .custom-carousel {
   display: flex;
@@ -146,7 +159,6 @@ h3 {
   background-color: #007bff;
   color: white;
 }
-
 
 .food-section {
   padding: 60px 50px;
@@ -266,6 +278,7 @@ h3 {
     width: 80%;
     height: 200px;
   }
+
   .food-section .item.active {
     width: 80%;
     box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
@@ -277,6 +290,28 @@ h3 {
     overflow-x: auto;
     white-space: no-wrap;
     flex-direction: column;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .image-column, .text-column {
+    flex: none;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .text-column {
+    margin-top: 40px;
+  }
+
+  .text-column h1 {
+    font-size: 32px; /* Adjust font size for better readability */
+  }
+
+  .text-column p {
+    font-size: 12px; /* Adjust font size for better readability */
   }
 }
 
@@ -319,7 +354,6 @@ h3 {
   .line-title {
     width: 330px;
   }
-
 
   .food-section {
     padding: 50px 30px 40px;
@@ -385,7 +419,6 @@ h3 {
     line-height: 32px;
   }
 
-  
   .food-section {
     padding: 50px 30px;
   }
