@@ -9,24 +9,24 @@
   <script src="https://kit.fontawesome.com/3a3dab9761.js" crossorigin="anonymous"></script>
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/js/script.js" rel="stylesheet">
-  <title>Plates Picker</title>
+  <title>Culinary Vows</title>
 </head>
 <body>
 
   <!----------------------------------------- HEADER & NAV BAR ----------------------------------------->
   <header>
     <a href="index.html">
-        <h1 id="logo">Plates Picker</h1>
+        <h1 id="logo">Culinary Vows</h1>
     </a>
     <input type="checkbox" name="nav-toggle" id="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label"><i class="fa-solid fa-bars"></i></label>
     <nav>
         <ul id="menu">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="">Starters</a></li>
-            <li><a href="">Mains</a></li>
-            <li><a href="">Desserts</a></li>
-            <li><a href="">Submit</a></li>
+            <li><a href="#starter-section">Starters</a></li>
+            <li><a href="#main-section">Mains</a></li>
+            <li><a href="#sweet-section">Desserts</a></li>
+            <li><a href="emailform.html">Submit</a></li>
         </ul>
     </nav>
 </header>
@@ -51,11 +51,13 @@
 
 
   <!----------------------------------------- STARTER PAGE ----------------------------------------->
-  <section class="starter-section food-section">
+  <section class="starter-section food-section" id="starter-section">
     <h3 class="line-title">Choose your starter</h3>
       <div class="custom-carousel">
-        <div class="item active" style="background-image: url(assets/images/bruschetta.jpg);">
-          <div class="item-desc">
+        <div class="item active" style="background-image: url(assets/images/bruschetta.jpg);" id="myImg">
+          <div id="myModal" class="modal">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <img class="modal-content" id="img01" src="assets/images/Bruschetta.png">
           </div>
         </div>
         <div class="item active" style="background-image: url(assets/images/soup.jpg);">
@@ -80,6 +82,7 @@
         </div>
       </div>
   
+      <form action="emailform.html" method="get">
     <div class="starter-menu">
       <div id="starter" >
         <H2>Choose your starter</H2>
@@ -93,6 +96,7 @@
       </select>
       </div>
     </div>
+  </form>
   </section>
 
 
@@ -100,7 +104,7 @@
 
 
   <!----------------------------------------- MAINS PAGE ----------------------------------------->
-  <section class="main-section food-section">
+  <section class="main-section food-section" id="main-section">
     <h3 class="line-title">Choose your main</h3>
       <div class="custom-carousel">
         <div class="item active" style="background-image: url(assets/images/pizza.jpg);">
@@ -129,6 +133,7 @@
         </div>
       </div>
   
+      <form action="emailform.html" method="get">
     <div class="main-menu">
       <div id="main" >
         <H2>Choose your starter</H2>
@@ -142,6 +147,7 @@
       </select>
       </div>
     </div>
+  </form>
   </section>
 
 
@@ -149,7 +155,7 @@
 
 
   <!----------------------------------------- SWEETS PAGE ----------------------------------------->
-  <section class="sweet-section food-section">
+  <section class="sweet-section food-section" id="sweet-section">
     <h3 class="line-title">Choose your dessert</h3>
       <div class="custom-carousel">
         <div class="item active" style="background-image: url(assets/images/chocolatefondant.jpg);">
@@ -178,6 +184,7 @@
         </div>
       </div>
   
+      <form action="emailform.html" method="get">
     <div class="sweet-menu">
       <div id="sweet" >
         <H2>Choose your starter</H2>
@@ -191,13 +198,66 @@
       </select>
       </div>
     </div>
+  </form>
   </section>
 
-
-
-
+  <Div id="name" >
+    <H2>Enter your email address</H2>
+    <input type="text" id="nameInput" placeholder="Enter your email address">
+  </Div>
+  
+  <form action="emailform.html" method="get">
+  <p><input type="reset" value="Reset Choices"></p>
+  <p><input type="button" onclick="storevalues()" value="Save Choices" ></p>
+  </div>
+  <P><input type="submit"></P>
+  </form>
+  
 
 
   <!----------------------------------------- LINK TO FORM PAGE ----------------------------------------->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const items = document.querySelectorAll(".custom-carousel .item");
+    
+    items.forEach(item => {
+      item.addEventListener("click", function () {
+          items.forEach(i => i. classList.remove("active"));
+          this.classList.toggle("active");
+        });
+      });
+    });
+
+    // Your array
+    const myArray = [];
+    //add email
+    function storevalues(){
+        myArray[0]=document.getElementById('nameInput').value;
+        myArray[1]=document.getElementById("Starters").value;
+        myArray[2]=document.getElementById("Mains").value;
+        myArray[3]=document.getElementById("Sweet").value;
+        console.log(myArray);
+        let Choices = JSON.stringify(myArray);
+        sessionStorage.setItem('myArray', Choices);
+        
+    };
+
+    let modal = document.getElementById("myModal");
+
+    let img = document.getElementById("myImg");
+    let modalImg = document.getElementById("img01");
+    img.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    //var span = document.getElementsByClassName("close")[0];
+
+    //span.onclick = function() {
+    //  modal.style.display = "none";
+    //}
+</script>
+
+
 </body>
 </html>
