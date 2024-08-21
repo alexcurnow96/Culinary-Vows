@@ -1,131 +1,125 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Alex Curnow,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Culinary Vows
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
 
-## Gitpod Reminders
+## Introduction
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Culinary Vows is an interactive website that allows users to input their choices for a three-course dinner at a wedding. The site features image carousels with pop-out modals to show allergen information and dish descriptions. The user then chooses their option from a drop-down box and save their inputs ready to send it to their email to confirm. 
 
-`python3 -m http.server`
+![Responsive Mockup](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/amiresponsive.png)
 
-A blue button should appear to click: _Make Public_,
+## Landing page 
 
-Another blue button should appear to click: _Open Browser_.
+This project utilises one main webpage, with an additional smaller page for the email confirmation to be sent. The landing page, therefore, includes the event information, image carousels, dropdown boxes, and inital email form. 
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+![Event Information](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/landingpage.png)
 
-A blue button should appear to click: _Make Public_,
+![Starter Carousel](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/startercarousel.png)
 
-Another blue button should appear to click: _Open Browser_.
+![Main Carousel](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/maincarousel.png)
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+![Dessert Carousel](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/dessertcarousel.png)
 
-To log into the Heroku toolbelt CLI:
+![Submit Form](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/submitform.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Send Email page
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+This send email page features the user's choices (once saved on landing page) and a button to send it to the email listed. 
 
-### Connecting your Mongo database
+![Responsive Mockup](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/emailform.png)
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+## Design Choices
 
-------
+I started my project by planning on a Miro whiteboard. I created ideas, user stories, design choices, and wireframes on my board. 
 
-## Release History
+The design started with the image carousels which would feature different dishes for each course. These would be highly colourful, with each dish image showing the vibrancy of the ingredients to make choices easier for users. Therefore, I made the decision to keep the background and all elements white. 
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+![Responsive Mockup](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/miroboard.png)
 
-**June 18, 2024,** Add Mongo back into template
+My wireframes were made on the Miro whiteboard using their shapes feature. This was my first design, featuring multiple pages with links to storage. 
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+I realised upon starting development that my project would require a back-end server to store the information from each webpage and show them on the final page. This was not within my current learning scope and so I simplified the website and included all the dropdown boxes, email input, and image carousels on one page. 
 
-**May 28 2024:** Fix Mongo and Links installs
+This made it easier for me to add the inputs into an array and place it into session storage to be brought back on the final page.
 
-**April 26 2024:** Update node version to 16
+![Wireframes](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/wireframes.png)
 
-**September 20 2023:** Update Python version to 3.9.17.
+## User Stories, features and bugs
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+User Stories
+- As a user I want a clean and simple site to make my decision easier. 
+- As a user I want to see all of my options in categories to make my decision easier.
+- As a user I want to see allergy information to be able to make a wise choice.
+- As a user I want my options to be stored, so I don't have to make the choices again.
+- As an event planner I want a simple app to send to guests at my event.
+- As a designer I want a design that is easy to replicate for multiple dishes and categories to help me develop the site. 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Features
+- Clean and simple design with minimal branding colours.
+- Clear links and buttons to pages.
+- Event information listed clearly.
+- Image carousels.
+- Categories of images.
+- Session storage.
+- Creation and storage of an array.
+- Modal with allergen information.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Future Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+This project would benefit from having a back-end database, including key value pairs and storage for multiple users. 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+This project would benefit from having a fully customisable design for multiple events, including text-areas and image-areas for an event planner to fill in and send to guests. 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+In the next iteration, the submit button will not be available to click until the options have been saved into an array. This reduces user confusion and follows the process needed for the session storage to work. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Fixed Bugs / Issues
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+There was a bug with the modal on the carousel images. The modal would open upon clicking the corresponding image but would not close. Upon further investigation (with the help of our SME expert, Mark), we discovered it was event bubbling which was hindering the modal closing. 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The close button, upon clicking, would bubble back to the open click and reopen the modal. This was because the close div was nested inside of the open div. It was fixed through research and expert help. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Unfixed Bugs / Issues
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+There is only one modal working (Bruschetta on the starter carousel). Due to my current experience with JavaScript, I was unable to make more than one modal work on my page. The one modal is a good example of what the others will show, and the modal images are all featured in my assets/images folder. 
 
-------
 
-## FAQ about the uptime script
+### Validator Testing
 
-**Why have you added this script?**
+![HTML validation](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/htmlvalidation.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Email HTML validation](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/emailhtmlvalidation.png)
 
-**How will this affect me?**
+![CSS validation](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/cssvalidation.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+![Mobile Lighthouse](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/lighthousemobile.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Desktop Lighthouse](https://github.com/alexcurnow96/Culinary-Vows/blob/main/assets/README/lighthousedesktop.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+## Deployment
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Site successfully deployed on  [https://alexcurnow96.github.io/Culinary-Vows/]
 
-**Can I opt out?**
+## Credits
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Content
+- Yudiz Solutions Limited's Codepen 'Expandable Animated Card Slider' was used as a template for the image sliders. [Expandable Animated Card Slider (codepen.io)](https://codepen.io/yudizsolutions/pen/wvzrPoj)
+- Inspiration was taken from Bedimcode's Youtube video 'Responsive Space Website Design Using HTML CSS And JavaScript'. [(2) Responsive Space Website Design Using HTML CSS And JavaScript - YouTube](https://www.youtube.com/watch?v=B8aTNKgbwE0&t=201s)
+- Fonts were taken from Google Fonts. [Browse Fonts - Google Fonts](https://fonts.google.com/)
+- The icon for the close button was taken from Font Awesome. [Font Awesome](https://fontawesome.com/)
+- Perplexity AI was used for each dish description and the event information. [Perplexity](https://www.perplexity.ai/)
+- Perplexity AI was also used for coding help to explain concepts in an easy to digest manner. [Perplexity](https://www.perplexity.ai/)
+- W3Schools was used as an outside resource for the JavaScript elements. Listed here is the modal information. [https://www.w3schools.com/howto/howto_css_modal_images.asp](https://www.w3schools.com/howto/howto_css_modal_images.asp)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+### Media
+- Food images were made by Firefly Generative Image AI from Adobe. [Adobe Firefly](https://firefly.adobe.com/inspire/images?ff_channel=adobe_com&ff_campaign=ffly_homepage&ff_source=firefly_seo)
+- The top image was taken from Pexels.com. Photo by Alem Sánchez. [https://www.pexels.com/photo/white-receipt-on-table-612790/](https://www.pexels.com/photo/white-receipt-on-table-612790/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Other General Project Advice
 
----
-
-Happy coding!
+Thank you to my cohort for their support, our facilitator Amy for her constant kind words and for reaching out when I am in the zone. And to Mark, you are THE expert! Thank you for finding and fixing my bugs (and then telling me I solved it just to boost my ego).
