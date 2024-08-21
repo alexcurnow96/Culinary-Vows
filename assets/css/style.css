@@ -150,7 +150,6 @@ h3 {
 .custom-carousel {
   display: flex;
   overflow-x: auto;
-  white-space: no-wrap;
 }
 
 .item {
@@ -216,7 +215,6 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  size: 3rem;
 }
 
 /* ------------------------------ MODALS ------------------------------ */
@@ -394,7 +392,6 @@ input[type="submit"]:hover {
   .custom-carousel {
     display: flex;
     overflow-x: auto;
-    white-space: no-wrap;
     flex-direction: column;
   }
 
@@ -506,9 +503,7 @@ input[type="submit"]:hover {
   .custom-carousel {
     display: flex;
     overflow-x: auto;
-    white-space: no-wrap;
   }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -613,7 +608,6 @@ input[type="submit"]:hover {
   .custom-carousel {
     display: flex;
     overflow-x: auto;
-    white-space: no-wrap;
   }
 
   .text-column h1 {
